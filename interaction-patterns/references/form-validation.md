@@ -1,0 +1,2 @@
+# Form & Validation Contract
+Use persistent labels; communicate format/constraints before error when needed; distinguish required/optional intentionally; choose validation timing to help rather than punish; associate errors with fields; preserve entered data; focus/summary strategy for submission errors; support keyboard/autofill; use correct input semantics; handle loading/success/failure/retry; avoid placeholder-as-label. Test empty, invalid, boundary, long/localized and server-error cases.
