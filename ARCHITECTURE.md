@@ -20,6 +20,12 @@ See `ROUTING-MAP.md` for the role contract and collision policy.
 ### L3 — knowledge
 Focused references hold narrow pattern/domain knowledge and are loaded on demand. A KPI reference can be detailed without becoming another top-level discovery candidate.
 
+The V1 Knowledge Layer uses four classes: invariants, rule cards, precedents and project memory. Rule cards use explicit strength labels (**MUST / DEFAULT / CONTEXTUAL / AVOID**) so a robust default is not accidentally treated as universal law.
+
+Retrieval is compositional: a surface containing search + date range + filters + table remains one Interaction Patterns decision and loads only those cards. Data visualization first loads `data-viz/choose-chart.md`, then only the relevant chart-family guidance. UI Craft follows the same pattern for spacing/hierarchy/type/grid/density/responsive foundations.
+
+See `docs/KNOWLEDGE-LAYER.md` and `docs/KNOWLEDGE-SOURCES.md`.
+
 ## Project/session plane
 On first meaningful invocation the Director establishes available capabilities: repository/project sources, existing skills, connected design sources, implementation/testing tools and durable memory. For repository work, optional `.design/` stores project-specific knowledge. It supplements, never replaces, code/docs/design-system sources of truth.
 
@@ -32,7 +38,8 @@ SESSION CAPABILITY INIT (first meaningful invocation)
 → OPTIONAL SUPPORT SPECIALIST
 → IMPLEMENTATION
 → VERIFICATION
-→ CHECKPOINT / LEARNING
+→ CHECKPOINT / EVIDENCE-GATED LEARNING
+→ REGRESSION CASE WHEN A REUSABLE FAILURE IS FOUND
 → DONE
 
 Skip any step whose question is already answered or irrelevant.
@@ -63,3 +70,16 @@ The repository is self-contained for clean installations. An installer must not 
 
 ## Why not one skill per component?
 Discovery metadata itself consumes routing attention. Top-level skills represent distinct reasoning domains. Component-specific knowledge belongs in `interaction-patterns/references/` and is read only when selected.
+
+
+## Learning architecture
+Learning is project-local by default. Capture only reusable production failures, recurring decisions, measured evidence that contradicts a default, or repeated unresolved patterns. A reusable failure generates an original + near-neighbor + boundary + opposite/control mini-suite before canonical guidance is changed.
+
+This prevents self-reinforcing drift: an agent's own implementation is not evidence that its choice should become a global rule. See `docs/LEARNING-LOOP.md`.
+
+## Validation
+Two complementary suites are canonical:
+- `evals/ROUTING-REGRESSION-V1.md` tests entry/specialist routing, abstention and cross-cluster collisions.
+- `evals/KNOWLEDGE-LAYER-V1.md` tests focused retrieval, rule quality, no-invented-data behavior, semantics/accessibility and negative controls.
+
+V1 is considered pilot-ready, not knowledge-complete. Expansion is failure/usage-driven.
