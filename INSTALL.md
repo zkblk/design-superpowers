@@ -1,31 +1,38 @@
 # Install / Use
 
-## Codex — global (recommended for personal use)
-Copy each top-level skill directory (`design-director`, `product-ux-strategy`, etc.) into:
+## Important: do not blindly flatten this into an existing skill collection
+Design Superpowers assumes **one broad design entry skill**: `design-director`. Before installing into an environment that already has design skills, inspect names and descriptions.
 
-`~/.agents/skills/`
+Resolve:
+- exact name collisions
+- different skills that answer the same L2 question
+- legacy descriptions that broadly auto-trigger on any UI/UX/design request
 
-Codex discovers user-level skills there across repositories. Keep project-specific knowledge in the repository, not in the global skill.
+Keep the richer implementation of a role when appropriate. The bundled specialists make this repository self-contained for clean installs; they are fallbacks, not a requirement to duplicate stronger existing skills.
 
-## Codex — repository/team
-Copy selected skills into:
+See `ROUTING-MAP.md`.
 
-`.agents/skills/`
+## Codex
+For a clean personal installation, deploy the selected skill directories to the supported user-level skills location. For a repository/team installation, deploy them to the supported repository skills location. Keep project-specific knowledge in the repository.
 
-Commit them when the team should share the same workflow. Do not install duplicate skills with the same `name` at user and repo scope unless you intentionally want both visible.
+If an existing environment already has a richer `design-intelligence` or another same-role specialist, do not install a duplicate merely because it is bundled here.
 
 ## Project Brain
-Copy `project-template/.design/` to the project root only when durable design knowledge is useful. Do not generate empty UX artifacts. Populate it incrementally with confirmed context, rules, decisions, evidence, and case-study material.
+Copy `project-template/.design/` to the project root only when durable design knowledge is useful. Do not generate empty UX artifacts. Populate it incrementally with confirmed context, rules, decisions, evidence and case-study material.
 
-## ChatGPT / other skill-compatible surfaces
-This package is the canonical skill source. Import/install the skill folders where the surface supports standalone skills. For broad ChatGPT distribution across supported Chat/Work surfaces, package the same skills as a plugin rather than maintaining a separate prompt system.
+## Claude Code
+Use `claude/CLAUDE-BOOTSTRAP.md` as the installation handoff. It inspects existing skills/instructions before deployment, resolves conflicts and validates the final setup.
 
-## Default invocation
-Use `design-director` as the entry point for ambiguous/multi-stage design work. For an obvious narrow task, direct invocation of a specialist is valid (for example `interaction-patterns` for a KPI card). The Director must not force a full process around a well-defined task.
+Use `claude/INVARIANTS.md` as the source for always-on design rules in the host's persistent project-instruction/rules mechanism. Do not assume an undocumented metadata field is portable across hosts; host-specific automatic-loading features must be verified against that host/version before relying on them.
 
-## Claude Code — repository install
-Use `claude/CLAUDE-BOOTSTRAP.md` as the handoff instruction. It tells Claude Code to inspect the repository first, preserve existing instructions, install each skill one level under `.claude/skills/<skill-name>/`, validate names/references, and explain the final setup.
+`claude/install-claude.sh` remains a simple non-destructive copier for **clean installations**. It skips same-name conflicts but does not semantically resolve differently named overlapping skills. For a mature account with many existing skills, use the bootstrap inspection instead of blind copy.
 
-For a simple non-destructive copy, run `claude/install-claude.sh` from the package; existing skill directories are skipped rather than overwritten. Then ask Claude Code to execute the bootstrap validation.
+## Plugin distribution
+Plugin packaging is preferred when the target surface preserves the complete skill package, including reference files and adapter resources. Do not assume that every “install skill” UI preserves supporting directories; verify the actual distribution path.
 
-Keep one canonical Design Superpowers package in version control. Treat `.agents/skills` and `.claude/skills` as deployment targets, not separately edited sources.
+## Invocation
+Users should normally ask for the design work itself, not select a specialist. `design-director` is the broad entry point and routes internally.
+
+Explicit specialist invocation remains possible for debugging/expert control, but bundled specialist metadata is intentionally not written to compete with the Director for generic design requests.
+
+Keep one canonical package in version control. Treat host-specific skill folders/build outputs as deployment targets, not separately edited sources.
