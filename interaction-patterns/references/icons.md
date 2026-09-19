@@ -1,13 +1,7 @@
 # Icons
-
-**DEFAULT** Treat icons as reinforcement, not language. If an action or destination is not reliably recognizable without explanation, keep a visible text label.
-
+**DEFAULT** Treat icons as reinforcement, not language. If an action/destination is not reliably recognizable, keep a visible text label.
 **MUST** Interactive icons have an accessible name and sufficient target/focus treatment.
-
 **DEFAULT** Reuse the project's icon set before introducing another style.
-
-**CONTEXTUAL** Icon-only controls work for well-established conventions (for example close/search in familiar contexts), dense repeated toolbars, or severe space constraints.
-
-**AVOID** inventing icons for every label, mixing icon families, using a tooltip as the only way to understand an essential action, or encoding status only by icon/color without another cue.
-
-Verify recognition in context, consistency, label/accessibility parity, target size, contrast and state.
+**CONTEXTUAL** Icon-only controls fit strongly conventional, repeated compact controls or genuine space constraints.
+**AVOID** icons on every label, mixed icon families, tooltips as the only explanation of essential actions, or status encoded only by icon/color.
+Verify recognition, consistency, accessible-name parity, target size, contrast and state.
