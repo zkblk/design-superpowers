@@ -1,23 +1,19 @@
 ---
 name: design-testing
-description: Verify design intent and implementation quality through UX critique, heuristic review, accessibility/WCAG 2.2 checks, responsive/visual QA, interaction/state testing and evidence-based validation. Use after meaningful design/implementation changes or when explicitly auditing an existing interface.
+description: Internal verification specialist used after Design Director identifies what must be validated, or for an explicit design/UX audit. Checks intent, rendered UI, interaction states, responsive behavior, accessibility and evidence. Not a general design-generation or visual-styling entry point.
 ---
 # Design Testing
 
-Verification is adaptive: test what can fail in this task. Do not run a ceremonial full audit for a trivial change.
+Answer: **Does the implemented or proposed result actually satisfy its intent and relevant quality constraints?**
+
+Verification is adaptive. Test what can fail in this task; do not run a ceremonial full audit for a trivial change.
 
 ## Two reviews
-1. **Intent review** — did the result solve the stated user/business/design problem without violating scope?
-2. **Quality review** — is the solution structurally, visually, interactively, accessibly and technically sound?
+1. Intent: did the result solve the stated problem without unintended scope expansion?
+2. Quality: is it structurally, visually, interactively, accessibly and technically sound?
 
-## When implementation exists
-Inspect the rendered result, not only source code. Exercise relevant desktop/tablet/narrow widths, keyboard/focus, loading/empty/error/overflow states and interaction behavior. Use automated checks (e.g. accessibility/Lighthouse/browser tests) as evidence, not as proof that UX is good.
+When implementation exists, inspect the rendered result rather than source alone. Exercise relevant widths, keyboard/focus, loading/empty/error/overflow states and interactions. Automated checks are evidence, not proof that UX is good.
 
-## Accessibility
-Target WCAG 2.2 AA where applicable. Use WAI/APG for common widget semantics and keyboard patterns. Distinguish WCAG success criteria from supplemental guidance and from design recommendations. Prefer native semantics before ARIA.
+Target WCAG 2.2 AA where applicable. Prefer native semantics before ARIA and distinguish normative criteria from guidance.
 
-## Heuristics and psychology
-Use Nielsen/Laws of UX to diagnose concrete problems. Do not generate a long checklist disconnected from the task.
-
-## Completion rule
-Do not claim done without evidence appropriate to the task. Report what was checked, failures fixed, remaining uncertainty and any validation that requires real users/production data.
+Do not claim done without evidence appropriate to the task. Return what was checked, failures fixed, remaining uncertainty and validation requiring real users/production data.
