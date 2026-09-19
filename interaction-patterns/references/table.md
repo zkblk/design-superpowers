@@ -1,0 +1,3 @@
+# Table / Data Grid Contract
+Decide table vs data grid from interaction needs. Define row identity, column priority, alignment (especially numeric), headers/units, sort/filter/search, selection/bulk actions, row actions, pagination/virtualization, sticky behavior, density, resize if needed, loading/empty/error, overflow and keyboard/focus semantics.
+Responsive is a content-priority decision, not automatically “turn rows into cards.” Consider preserved comparison, horizontal scroll, hidden secondary columns, expandable detail, stacked representation or alternate narrow view. Test long labels, extreme values and many columns.
