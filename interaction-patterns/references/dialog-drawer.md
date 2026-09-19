@@ -1,0 +1,2 @@
+# Dialog / Drawer Contract
+Choose dialog, drawer, popover or page from task interruption, complexity, context retention and available space. Define title/name, optional description, content, primary/secondary/destructive actions, close/back semantics, modality, outside-click policy, Escape, initial focus, focus containment where modal, return focus, unsaved-change behavior, overflow, responsive behavior, elevation/layering and reduced-motion behavior. Do not assume outside-click dismissal is always safe.
