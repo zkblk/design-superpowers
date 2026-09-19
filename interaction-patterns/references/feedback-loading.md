@@ -1,0 +1,2 @@
+# Loading / Feedback Contract
+Choose feedback based on uncertainty and duration: immediate state change, skeleton, spinner, determinate progress, optimistic update, background status. Communicate what is happening when delay is meaningful. Prevent duplicate actions. Preserve context. Define success, partial success, timeout, failure, retry and stale-data behavior. Motion should communicate state/continuity, not decorate waiting.
