@@ -49,3 +49,22 @@ Director → Standard → Art Direction → UI Craft → existing DS → render 
 
 **We do not understand why users abandon this workflow**
 Director → Deep → Product UX Strategy → evidence/research → IA/Patterns only after the problem is sufficiently framed.
+
+
+## Focused knowledge retrieval
+
+After a specialist is selected, references are selected by the concrete decisions present in the task, not by loading a whole library.
+
+**Invoice list with search + date range + status + table**
+Director → Interaction Patterns → `search.md` + `date-picker.md` + `filters.md` + `table.md` → implement → verify.
+
+**24-month revenue history**
+Director → Interaction Patterns → KPI if a summary metric is needed → `data-viz/choose-chart.md` → line/bar guidance selected from the analytical question → implement → verify.
+
+**Single revenue value**
+Director → Interaction Patterns → KPI. No chart is required merely because chart knowledge exists.
+
+**“Make this dense operational UI cleaner”**
+Director → UI Craft → load only relevant spacing/hierarchy/density/responsive cards → preserve required information and existing tokens.
+
+References are knowledge, not agents. Multiple cards do not imply multiple specialist invocations.
