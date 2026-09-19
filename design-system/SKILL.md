@@ -1,20 +1,17 @@
 ---
 name: design-system
-description: Inspect, create, extend and govern scalable design systems: foundations, semantic tokens, component contracts, responsive rules, themes, iconography, motion and documentation. Use when a project lacks a coherent system or when a reusable system-level addition/change is needed.
+description: Internal system-level specialist used when Design Director identifies a reusable design-system decision. Owns foundations, semantic tokens, component contracts, themes, responsive rules and governance. Not for one-off screen styling, general UI polish or product/UX strategy.
 ---
 # Design System
 
-## Source-of-truth rule
-If a system exists, use it. Inspect CSS/theme variables, token files, component library, Storybook, typography, icons, breakpoints and patterns. Never create a parallel system casually.
+Answer: **What belongs in the reusable system, tokens or component contract?**
 
-## Composition order
-**reuse → compose → extend → create**.
-Do not introduce arbitrary values when an appropriate token/style/component exists. If a reusable need is genuinely missing, extend the system intentionally rather than patching one screen.
+If a system exists, inspect and use it: CSS/theme variables, token files, component library, Storybook, typography, icons, breakpoints and patterns. Never create a parallel system casually.
 
-## Layers
-Foundations/primitives → semantic tokens → component tokens where needed → primitives/components → patterns/modules → product UI.
-Prefer semantic roles (`text.primary`, `surface.warning`, `space.section`) over values encoded in names.
+Composition order: **reuse → compose → extend → create**. Do not introduce arbitrary values when an appropriate token/style/component exists.
 
-Cover color, typography, spacing, grid/layout, radius, border, elevation/layers, iconography, motion, breakpoints/containers, themes and component states. Accessibility requirements belong in component contracts. Responsive behavior belongs in component/pattern contracts.
+Layers: foundations/primitives → semantic tokens → component tokens where needed → primitives/components → patterns/modules → product UI. Prefer semantic roles over values encoded in names.
 
-Document why/when/behavior, not only visual specs. New system additions need states, responsive behavior, accessibility, examples and migration/usage notes proportionate to their importance.
+Cover only relevant system dimensions: color, typography, spacing, grid/layout, radius, border, elevation/layers, iconography, motion, breakpoints/containers, themes and component states. Accessibility and responsive behavior belong in contracts.
+
+Document why/when/behavior, not only visual specs. New system additions need states, responsive behavior, accessibility, examples and migration/usage notes proportionate to importance.
