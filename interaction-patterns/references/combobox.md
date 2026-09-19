@@ -1,6 +1,6 @@
 # Combobox
-Use when users need to select from suggestions while typing/searching; do not substitute it for a simple small select without need.
-
-Define: input/value model, suggestions source, filtering, freeform vs constrained value, single/multi-select, active vs selected option, keyboard navigation, focus, opening/dismissal, empty/no-match/loading/error states, async behavior, long labels, clear/reset, mobile behavior, accessible name/description and option semantics.
-
-Prefer the project's established primitive/library. Verify typing does not destroy a valid value unexpectedly; selection and focus are distinguishable; Arrow keys/Enter/Escape behave coherently; pointer and keyboard produce the same state model; popup placement/overflow does not obscure critical content.
+Use when users benefit from typing/searching among options; prefer simpler select/radios when options are few and stable.
+**MUST** Define editable vs select-only behavior, popup, selection, keyboard navigation, focus, expanded state and accessible relationships.
+**DEFAULT** Preserve typed text unless selection/recovery explicitly requires otherwise.
+**AVOID** custom keyboard behavior conflicting with platform/APG expectations and comboboxes for a handful of visible choices.
+Prefer native semantics where possible; otherwise follow the relevant WAI-ARIA APG combobox pattern.
