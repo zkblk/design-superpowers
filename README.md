@@ -78,11 +78,27 @@ The construction rule is:
 
 Design Superpowers does not replace your design system. It makes the agent use it.
 
+## Knowledge Layer v1
+
+Design Superpowers now includes a bounded professional knowledge layer rather than relying on the model to remember every UI convention from scratch.
+
+Knowledge is separated into:
+- **invariants** — non-negotiable scope, data-integrity, accessibility and system constraints
+- **rule cards** — compact MUST / DEFAULT / CONTEXTUAL / AVOID guidance
+- **precedents** — inspiration, never authority
+- **project memory** — evidence-backed local decisions
+
+Authority is intentionally ordered: project/domain evidence → standards/native semantics → mature design systems → established research/books → precedent galleries → social-media tips. See `docs/KNOWLEDGE-LAYER.md` and `docs/KNOWLEDGE-SOURCES.md`.
+
 ## Pattern knowledge without prompt bloat
 
 A table, date picker and KPI card need different reasoning. Pattern details live under `interaction-patterns/references/` and are loaded only when relevant.
 
-The current library covers KPI cards, tables, dialogs/drawers, comboboxes, date pickers, forms/validation, search/filters, feedback/loading, popovers/tooltips/menus and uploads.
+The V1 interaction core covers buttons/icons, inputs, validation, comboboxes, date pickers, search, filters, tables/data grids, pagination, KPI cards, navigation, dialogs, empty/loading/error states and a data-visualization decision layer.
+
+Data visualization starts from the analytical question and data shape, then routes to comparison/trend/distribution/correlation/part-to-whole guidance. It explicitly allows **no chart** when a KPI, table or text answers the question better.
+
+`ui-craft/references/` adds focused foundations for spacing, visual hierarchy, typography, alignment/grid, density and responsive composition. Project tokens and components override generic numeric recipes.
 
 ## Portable, but collision-aware
 
@@ -108,6 +124,18 @@ Some requirements should exist before routing. Host adapters can place the L0 in
 - rendered verification when implementation exists
 
 For Claude-oriented setups, see `claude/INVARIANTS.md`.
+
+## Evidence-gated learning
+
+Design Superpowers can learn without silently corrupting its own rules. Production failures and repeated evidence can create project-local decisions and regression cases. A canonical rule changes only when it survives near-neighbor, boundary, opposite/control and existing regression cases.
+
+The agent may not promote its own implementation preference into a `MUST`. See `docs/LEARNING-LOOP.md`.
+
+The knowledge-layer regression suite lives in `evals/KNOWLEDGE-LAYER-V1.md`; routing regression lives in `evals/ROUTING-REGRESSION-V1.md`.
+
+## Current status
+
+**V1 is ready for pilot use.** The architecture, collision policy, focused knowledge retrieval, core interaction/data-viz cards, UI-craft foundations, learning guardrails and regression suites are in the canonical repository. The library is intentionally not declared “complete”: new cards should be added from repeated production need or verified gaps, not to maximize component count.
 
 ## Project memory
 
