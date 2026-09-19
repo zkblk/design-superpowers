@@ -1,3 +1,8 @@
-# Table / Data Grid Contract
-Decide table vs data grid from interaction needs. Define row identity, column priority, alignment (especially numeric), headers/units, sort/filter/search, selection/bulk actions, row actions, pagination/virtualization, sticky behavior, density, resize if needed, loading/empty/error, overflow and keyboard/focus semantics.
-Responsive is a content-priority decision, not automatically “turn rows into cards.” Consider preserved comparison, horizontal scroll, hidden secondary columns, expandable detail, stacked representation or alternate narrow view. Test long labels, extreme values and many columns.
+# Table / Data Grid
+Use a table for flat structured data where comparison across rows/columns matters. Use a data grid when cell interaction/editing is primary; use another structure for strongly hierarchical/long-form content.
+**DEFAULT** Short headers, one data meaning per column, minimal necessary columns, intuitive row order and concise cells.
+**DEFAULT** Right-align comparable numbers and use tabular numerals when available.
+**DEFAULT** Leave absent values blank or explain absence; do not use arbitrary "-", x, icon or emoji as universal empty markers.
+**MUST** Sorting state and controls are perceivable and keyboard accessible; the table has accessible context/name.
+**CONTEXTUAL** Narrow screens may prioritize columns, resize/wrap or use accessible horizontal scrolling; do not silently lose essential data.
+Test empty, one/many rows, long content, sorting, filters, pagination, actions, loading/error and narrow viewport.
