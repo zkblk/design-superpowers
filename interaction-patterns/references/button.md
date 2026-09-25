@@ -10,4 +10,6 @@
 
 **AVOID** decorative icons on every button, vague labels ("OK", "Submit") when a specific action is available, disabled actions without explanation when users need to know how to proceed, and changing layout when a button enters a short pending state.
 
+When deciding whether an unavailable action should be enabled, hidden or disabled, also load `availability-state.md`.
+
 Verify: semantics, label/outcome match, hierarchy, target size, focus, disabled/pending behavior, destructive-action safety.
