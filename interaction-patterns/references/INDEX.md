@@ -5,6 +5,7 @@ Load only cards that correspond to actual elements/decisions in the task.
 ## Actions
 - button.md
 - icons.md
+- availability-state.md
 
 ## Input and forms
 - input.md
